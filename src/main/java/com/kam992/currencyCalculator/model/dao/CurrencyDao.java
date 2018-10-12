@@ -1,18 +1,19 @@
-package com.kam992.currencyCalculator.model.service;
+package com.kam992.currencyCalculator.model.dao;
 
 import com.kam992.currencyCalculator.model.Utils;
 import org.json.JSONObject;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
-public class CurrencyService {
-    private static CurrencyService ourInstance = new CurrencyService();
 
-    public static CurrencyService getInstance() {
+@Component
+public class CurrencyDao {
+    private static CurrencyDao ourInstance = new CurrencyDao();
+
+    public static CurrencyDao getInstance() {
         return ourInstance;
     }
 
-    private CurrencyService() {
+    private CurrencyDao() {
     }
 
     public double getCurrency(String countryAbbreviation){

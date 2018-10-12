@@ -1,10 +1,10 @@
 package com.kam992.currencyCalculator.demo;
 
-import com.kam992.currencyCalculator.model.service.CurrencyService;
+import com.kam992.currencyCalculator.model.dao.CurrencyDao;
 
 public class Main {
     public static void main(String[] args) {
-        CurrencyService currencyService = CurrencyService.getInstance();
+        CurrencyDao currencyService = CurrencyDao.getInstance();
 
         double from = 0;
         double to = 0;
