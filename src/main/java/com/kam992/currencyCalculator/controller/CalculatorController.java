@@ -18,12 +18,12 @@ public class CalculatorController {
         this.calculatorService = calculatorService;
     }
 
-    @GetMapping
+    @GetMapping("/calculate")
     public String getCalculator(){
         return "index";
     }
 
-    @PostMapping
+    @PostMapping("/calculate")
     public String postCalculator(@RequestParam("value") double value,
                                  @RequestParam("from") String fromCurrency,
                                  @RequestParam("to") String toCurrency,
