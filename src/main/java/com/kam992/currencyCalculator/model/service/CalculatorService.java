@@ -13,4 +13,14 @@ public class CalculatorService {
     public CalculatorService(CurrencyDao currencyDao) {
         this.currencyDao = currencyDao;
     }
+
+    public double calculateCurrency(double value, String fromCurrency, String toCurrency) {
+        double result = 0;
+        //to change currency from USD
+        double from = 1 / currencyDao.getCurrency(fromCurrency);
+        double to = 1 / currencyDao.getCurrency(toCurrency);
+        result = value * (from / to);
+
+        return result;
+    }
 }

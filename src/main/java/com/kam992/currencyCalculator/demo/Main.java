@@ -14,6 +14,6 @@ public class Main {
 
         double result = (1/to)/(1/from);
 
-        System.out.println("1 pln = " + result + " of uah");
+        System.out.println("1 pln = " + result * 10 + " of uah");
     }
 }
