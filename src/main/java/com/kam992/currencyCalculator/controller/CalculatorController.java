@@ -28,11 +28,20 @@ public class CalculatorController {
                                  @RequestParam("from") String fromCurrency,
                                  @RequestParam("to") String toCurrency,
                                  Model model){
-
+        double val = value;
+        String fromCurr = fromCurrency;
+        String toCurr = toCurrency;
         double result = calculatorService.calculateCurrency(value, fromCurrency, toCurrency);
+
+        result = Math.round(100.0 * result) / 100.0;
+
+        model.addAttribute("value", val);
+        model.addAttribute("from", fromCurr);
+        model.addAttribute("to", toCurr);
 
         model.addAttribute("result", result);
 
         return "index";
     }
+
 }

@@ -6,15 +6,18 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script type="text/javascript" th:src="@{/script.js}"></script>
+
 </head>
 <body>
-<form method="post" action="/calculate">
+<form  method="post" action="/calculate">
     <input id="value" type="number" placeholder="value" th:name="value"/>
     <input id="from" type="text" placeholder="from" th:name="from"/>
     <input id="to" type="text" placeholder="to" th:name="to"/>
-    <input type="submit" value="show result"/>
+    <input type="submit" value="show result" onclick="check()"/>
 </form>
-<h7 th:text="${result}"></h7>
+<div  th:if="${result != null}">
+    <h5 th:text="${value} + '('+${from}+')' +' euqals ' + ${result} + '('+${to}+')'"></h5>
+</div>
 
 
 </body>
