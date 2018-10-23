@@ -25,6 +25,7 @@ public class CurrencyDao {
         JSONObject root = new JSONObject(websiteResponse);
         JSONObject currency = root.getJSONObject("quotes");
 
+
         double countryCurrency = currency.getDouble(USDCountryAbbreviation.toString());
 
 
